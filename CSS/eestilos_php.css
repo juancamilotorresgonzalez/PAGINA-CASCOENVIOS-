@@ -1,0 +1,58 @@
+.body_estilo {
+    background-color: #d0d3dd;
+    justify-content: center;
+    font-size: 40px;
+    font-weight: 100px;
+    background-image: url(../images/camino.jpg);
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    background-repeat: no-repeat;
+    
+    background-size: auto;
+    height: 800px;
+    position: relative;
+    top: 100%;
+    min-height: 400px;
+    min-width: 300px;
+    background-position: center;
+    
+    border: none;
+    text-decoration: peru;
+    padding: auto;
+    margin: 0 0 2em;
+
+}
+
+
+.body_estilo2{
+
+background-color: #d0d3dd;
+    justify-content: center;
+    font-size: 40px;
+    font-weight: 10px;
+    background-image: url(../images/camino.jpg);
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    background-repeat: no-repeat;
+    
+    background-size: auto;
+    height: 800px;
+    width: auto;
+    
+    position: center;
+    top: 100%;
+    min-height: 100px;
+    min-width: 100px;
+    background-position: center;
+    
+    border: none;
+    text-decoration: peru;
+    padding: auto;
+    margin: 0 0 2em;
+
+
+
+
+}
