@@ -65,42 +65,20 @@ echo $llave;
             
                 <td>Seleccione el Documento</td>
                 <td>                                  
-                    <select name="codigoDocumento" id="codigoDocumento">
-                    <option>
-                    <?php
-                    $clas = new Conexion();
-                    $conecta = $clas->conectar_al_servidor();
-                    $query1 = "SELECT nombreDocumento from documentos where codigoDocumento ='$obj->codigoDocumento'";
-                    $res=mysqli_query($conecta,$query1);
-                    $a=mysqli_fetch_array($res);
-                    echo $a[0];                              
-                                
-                                    do{
-                                       $identidad = $arreglo2['codigoDocumento'];
-                                       $nombre =    $arreglo2['nombreDocumento']; 
-                                       if($identidad == $obj->codigoDocumento){
-                                           echo "<option value=$identidad=>$nombre";
-                                       }else{
-                                            echo "<option value=$identidad>$nombre";
-                                           }                                      
-                                    }while($arreglo2 = mysqli_fetch_assoc($resultado2));
-                                    $row = mysqli_num_rows($resultado2);
-                                    $rows=0;
-                                    if($rows>0){
-                                                mysqli_data_seek($arreglo2,0);
-                                                $arreglo2 = mysqli_fetch_assoc($resultado2);
-                                    }
-                                ?> 
-                        </option>
-                    </select>
+                <select name="documentoCliente">  
+                    <?php   
+                        foreach ($resultado2 as $product): 
+                    ?>
+                        <option value="<?php echo($product["codigoDocumento"])?>" ><?php echo($product["numeroDocumento"])?></option>
+                    <?php endforeach;?>
+                </select>
             </td>
             </tr>
             <tr>
                 <td>Numero Documento</td>
                 <td><input type="text" name="documentoCliente" id="documentoCliente" value="<?php echo $obj->documentoCliente  ?>"  readOnly placeholder="Digite el Documento del Cliente"  size="30"></td>
             
-                <td>Seleccione el Documento</td>
-                <td><input type="checkbox" name="codigoDocumento" id="codigoDocumento" value="<?php echo $obj->codigoDocumento  ?>" readOnly  size="45"></td>
+            
             </tr>
             <tr>
                 <td>Nombre</td>

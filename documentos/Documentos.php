@@ -103,7 +103,9 @@ $cargarPagina = sprintf("&totalArreglo=%d%s", $totalArreglo, $cargarPagina);
                                 <button type="submit" name="refrescar" value="refrescar">Listar</button>
                             </td>
                             <td>
+                                 <a href="../index.html">
                                 <button type="button" name="salir" value="salir">Salir</button>
+                            </a>
                             </td>
                         </tr>
 
