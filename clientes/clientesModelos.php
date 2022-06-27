@@ -9,7 +9,7 @@ if($_POST){
     $obj->apellidoCliente = $_POST['apellidoCliente'];
     $obj->telefonoCliente = $_POST['telefonoCliente'];
     $obj->correoCliente = $_POST['correoCliente'];
-    $obj->contrasenaCliente = $_POST['contrasenaCliente'];
+    $obj->contrasenaCliente = $_POST['contraseñaCliente'];
     $obj->ciudadCliente = $_POST['ciudadCliente'];
 }
 if(isset($_POST['agregar'])){

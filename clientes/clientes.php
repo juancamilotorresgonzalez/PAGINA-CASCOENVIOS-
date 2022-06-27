@@ -163,15 +163,12 @@ $cargarPagina = sprintf("&totalArreglo=%d%s", $totalArreglo, $cargarPagina);
                                         <?php
                                         $clas = new Conexion();
                                         $conecta = $clas->conectar_al_servidor();
-                                        $query1 = "SELECT numeroDocumento from documentos where codigoDocumento ='$arreglo[0]'";
+                                        $query1 = "SELECT numeroDocumento from documentos where codigoDocumento ='$arreglo[1]'";
                                         $res = mysqli_query($conecta, $query1);
                                         $a = mysqli_fetch_array($res);
-                                        echo $a[0];
-
+                                        echo $a[0]
                                         ?>
                                     </td>
-                                    <td><?php echo $arreglo[0]; ?></td>
-                                    <td><?php echo $arreglo[1]; ?></td>
                                     <td><?php echo $arreglo[2]; ?></td>
                                     <td><?php echo $arreglo[3]; ?></td>
                                     <td><?php echo $arreglo[4]; ?></td>

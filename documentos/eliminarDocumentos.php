@@ -56,7 +56,7 @@ if(isset($_POST['eliminar'])){
                 <td colspan="2">
                     <center>
                         <button name="eliminar" type="submit"> Eliminar</button>
-
+sdas
                         <a href="documentos.php">
                             <button name="salir" type="button">Salir</button>
                         </a>

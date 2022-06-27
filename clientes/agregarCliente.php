@@ -22,8 +22,6 @@ $conecta = $clas->conectar_al_servidor();
 $query = "select * from documentos";
 $resultado = mysqli_query($conecta, $query);
 $arreglo = mysqli_fetch_assoc($resultado);
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,7 +41,7 @@ $arreglo = mysqli_fetch_assoc($resultado);
         <section class="body_estilo2">
 
             <center>
-                <form action="" name="clientes" id="clientes" method="POST">
+                <form action="" name="clientes" id="clientes" method="POST" enctype="multipart/form-data">
                     <h2>Crear Cliente</h2>
                     <table border="1">
                         <tr>
@@ -52,34 +50,13 @@ $arreglo = mysqli_fetch_assoc($resultado);
 
                             <td>Seleccione el Documento</td>
                             <td>
-
-                                <input type="file" name="documentoCliente" id="documentoCliente" alt="10" width="10" size="10">
-                                   
-                                   
-                                <option>
-                                        <?php
-                                        do {
-                                            $identidad = $arreglo['codigoDocumento'];
-                                            $nombre =    $arreglo['numeroDocumento'];
-                                            if ($identidad == $obj->codigoDocumento) {
-                                                echo "<option value=$identidad=>$nombre";
-                                            } else {
-                                                echo "<option value=$identidad>$nombre";
-                                            }
-                                        } while ($arreglo = mysqli_fetch_assoc($resultado));
-                                        $row = mysqli_num_rows($resultado);
-                                        $rows = 0;
-                                        if ($rows > 0) {
-                                            mysqli_data_seek($arreglo, 0);
-                                            $arreglo = mysqli_fetch_assoc($resultado);
-                                        }
-                                        ?>
-                                    </option>
-                                    
-
-                                    
-                                    </input>
-
+                                <select name="documentoCliente">  
+                                    <?php   
+                                        foreach ($resultado as $product): 
+                                    ?>
+                                        <option value="<?php echo($product["codigoDocumento"])?>" ><?php echo($product["numeroDocumento"])?></option>
+                                    <?php endforeach;?>
+                                </select>
                             </td>
                         </tr>
                         <tr>
